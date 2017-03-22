@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг» [![Build status][travis-image]][travis-url]
 
 * Студент: [Сергей Рубец](https://up.htmlacademy.ru/javascript/9/user/41580).
-* Наставник: `Неизвестно`.
+* Наставник: Без наставника.
 
 ---
 
