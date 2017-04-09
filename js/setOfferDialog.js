@@ -14,7 +14,7 @@ function getTypeOfHouse(house) {
   }
 }
 
-var element = utils.elementToClone('#lodge-template', '.dialog__panel').cloneNode(true);
+var element = elementToClone('#lodge-template', '.dialog__panel').cloneNode(true);
 
 function setOfferDialog(data) {
   var dialogTitle = element.querySelector('.lodge__title');
@@ -44,6 +44,7 @@ function setOfferDialog(data) {
     featureDocumentFragment.appendChild(span);
   });
 
+  dialogFeatures.innerHTML = '';
   dialogFeatures.appendChild(featureDocumentFragment);
   avatar.src = data.author.avatar;
   dialogDescription.textContent = data.offer.description;

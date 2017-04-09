@@ -4,7 +4,7 @@ function renderPinToMap(data) {
   var targetElement = document.querySelector('.tokyo__pin-map');
   var fragment = document.createDocumentFragment();
 
-  data.forEach(function(item) {
+  data.forEach(function(item, index) {
     var options = {
       left: item.location.x,
       top: item.location.y,
@@ -12,6 +12,10 @@ function renderPinToMap(data) {
     };
 
     var pin = createPin(options);
+
+    if (index === 0) {
+      pin.setAttribute('tabindex', '0');
+    }
     fragment.appendChild(pin);
   });
 

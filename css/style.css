@@ -9,6 +9,9 @@ body {
     color: #353535;
 }
 
+.is-hidden {
+    display: none!important;
+}
 h1 {
     color: #343434;
     font-size: 29px;

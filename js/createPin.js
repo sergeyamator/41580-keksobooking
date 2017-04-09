@@ -10,6 +10,7 @@ function createPin(options) {
   element.className = 'pin';
   element.style.left = options.left - (PIN_WIDTH / 2) + 'px';
   element.style.top = options.top - PIN_HEIGHT + 'px';
+  element.setAttribute('tabindex', '0');
 
   picture.src = options.src;
   picture.className = 'rounded';
