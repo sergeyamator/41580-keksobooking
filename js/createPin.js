@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var PIN_WIDTH = 56;
 var PIN_HEIGHT = 75;
@@ -20,3 +20,6 @@ function createPin(options) {
   element.appendChild(picture);
   return element;
 }
+
+window.createPin = createPin;
+

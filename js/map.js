@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 
-var features = ["wifi", "dishwasher", "parking", "washer", "elevator", "conditioner"];
-var featuresLength = features.length;
+window.features = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
+window.featuresLength = window.features.length;
 
-var data = generateNewDataPins();
+var data = window.generateNewDataPins();
 
 var pinContainer = document.querySelector('.tokyo__pin-map');
 var dialog = document.querySelector('.dialog');
@@ -13,8 +13,8 @@ pinContainer.addEventListener('click', onPinClick);
 document.addEventListener('keydown', onPinKeyDown);
 dialogCloseButton.addEventListener('click', closeDialog);
 
-renderPinToMap(data);
-renderCurrentOfferDialog(data[0]);
+window.renderPinToMap(data);
+window.offerDialog.renderCurrentOfferDialog(data[0]);
 
 function isNotPin(target) {
   if (!target) {
@@ -24,7 +24,7 @@ function isNotPin(target) {
 
   return !pin
     || pin.classList.contains('pin--active')
-    || pin.classList.contains('pin__main')
+    || pin.classList.contains('pin__main');
 }
 
 function onPinClick(evt) {
@@ -39,10 +39,10 @@ function onPinClick(evt) {
 }
 
 function showDialogWithActivePinData(pin) {
-  var pinIndex = getIndex(pinContainer, pin);
+  var pinIndex = window.UTILS.getIndex(pinContainer, pin);
 
-  offerDialog.renderCurrentOfferDialog(data[pinIndex - 2]);
-  offerDialog.show(dialog);
+  window.offerDialog.renderCurrentOfferDialog(data[pinIndex - 2]);
+  window.offerDialog.show(dialog);
 
   setActivePin(pin);
 }
@@ -57,7 +57,7 @@ function removeAllActiveClass(className) {
 
   for (var i = 0; i < allActiveElements.length; i++) {
     if (allActiveElements[i].classList.contains(className)) {
-      allActiveElements[i].classList.remove(className)
+      allActiveElements[i].classList.remove(className);
     }
   }
 }
@@ -70,8 +70,8 @@ function onPinKeyDown(evt) {
   }
   pin = evt.target.closest('.pin');
 
-  if (evt.keyCode !== UTILS.keyCodes.ENTER_KEY) {
-    return
+  if (evt.keyCode !== window.UTILS.keyCodes.ENTER_KEY) {
+    return;
   }
 
   showDialogWithActivePinData(pin);

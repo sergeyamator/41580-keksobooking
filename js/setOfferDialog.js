@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 function getTypeOfHouse(house) {
   if (house === 'flat') {
@@ -12,9 +12,11 @@ function getTypeOfHouse(house) {
   if (house === 'house') {
     return 'Дом';
   }
+
+  return 'unknown';
 }
 
-var element = elementToClone('#lodge-template', '.dialog__panel').cloneNode(true);
+var element = window.UTILS.elementToClone('#lodge-template', '.dialog__panel').cloneNode(true);
 
 function setOfferDialog(data) {
   var dialogTitle = element.querySelector('.lodge__title');
@@ -38,9 +40,9 @@ function setOfferDialog(data) {
   // Create features
   var featureDocumentFragment = document.createDocumentFragment();
 
-  data.offer.features.forEach(function(feature) {
+  data.offer.features.forEach(function (feature) {
     var span = document.createElement('span');
-    span.className='feature__image feature__image--' + feature;
+    span.className = 'feature__image feature__image--' + feature;
     featureDocumentFragment.appendChild(span);
   });
 
@@ -51,3 +53,6 @@ function setOfferDialog(data) {
 
   return element;
 }
+
+window.setOfferDialog = setOfferDialog;
+

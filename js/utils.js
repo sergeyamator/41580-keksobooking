@@ -1,10 +1,10 @@
-"use strict";
+'use strict';
 
 /**
  * Returns random number from min and max diapason
  * @param {Number} min
  * @param {Number} max
- * @returns {Number}
+ * @return {Number}
  */
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
@@ -12,7 +12,7 @@ function getRandomArbitrary(min, max) {
 
 /**
  * Checks, does browser support html5 tag template
- * @returns {boolean}
+ * @return {boolean}
  */
 function isTemplateSupported() {
   return 'content' in document.createElement('template');
@@ -22,7 +22,7 @@ function isTemplateSupported() {
  * Returns html template
  * @param {String} templateSelector
  * @param {String} elementSelector
- * @returns {Element}
+ * @return {Element}
  */
 function elementToClone(templateSelector, elementSelector) {
   var template = document.querySelector(templateSelector);
@@ -36,10 +36,10 @@ function elementToClone(templateSelector, elementSelector) {
  * Return index of the element
  * @param {Node} parent
  * @param {Node} child
- * @returns {Number}
+ * @return {Number}
  */
 function getIndex(parent, child) {
- return Array.prototype.indexOf.call(parent.childNodes, child) - 1;
+  return Array.prototype.indexOf.call(parent.childNodes, child) - 1;
 }
 
 window.UTILS = {
@@ -52,3 +52,4 @@ window.UTILS = {
     'ENTER_KEY': 13,
   }
 };
+
